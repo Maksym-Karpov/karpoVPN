@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Work for freelancer on KARPOVHUNT{% endblock title %}
+
+{% block content %}
+    <div class="profile__header">
+        <h1 class="section__title">{{ user.first_name }} {{ user.last_name }}</h1>
+        {% if is_user_able_edit_profile %}
+            <a href="{% url 'profile_edit' user.pk %}"
+               class="site__anchor">
+                Edit profile
+            </a>
+        {% endif %}
+    </div>
+
+    <div class="profile__detailed__inner">
+        <p class="paragraph">{{ user.about }}</p>
+        <div>
+            <table>
+                <tr>
+                    <th>Date joined</th>
+                </tr>
+                <tr>
+                    <td>{{ user.date_joined }}</td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th>Country</th>
+                </tr>
+                <tr>
+                    <td>{{ user.get_country_display }}</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+
+{% endblock content %}

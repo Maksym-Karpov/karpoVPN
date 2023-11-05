@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Create site on karpoVPN{% endblock title %}
+
+{% block content %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                {{ message|safe }}
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <h1 class="section__title">Create site on karpoVPN</h1>
+
+    <form method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" name="next" value="{{ next }}"/>
+        <button type="submit">Create Site</button>
+    </form>
+{% endblock content %}

@@ -1,0 +1,256 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    font-size: 16px;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    border-bottom: 2px solid lightgray;
+    padding: 13px;
+}
+
+.header__logo {
+    width: 180px;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navigation */
+.nav__link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 17px;
+    color: black;
+}
+
+.nav__link:hover {
+    color: #cd8fac;
+    transition: color .2s linear;
+}
+
+/* Button */
+button {
+    font-size: 15px;
+    vertical-align: top;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #a6c6f8;
+    cursor: pointer;
+    border: none;
+    margin: 0 5px;
+    color: darkslategrey;
+}
+
+.button__success {
+    background-color: #48a148;
+    color: white;
+}
+
+.button__danger {
+    background-color: darkred;
+    color: white;
+}
+
+.button__action {
+    padding: 25px 80px;
+    display: flex;
+    justify-content: center;
+    margin: 10px auto 0 auto;
+}
+
+/* Section */
+section {
+    background-color: #f6f6f6;
+    padding: 50px;
+    flex: 1;
+}
+
+.section__inner {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.section__title {
+    color: darkslategrey;
+    font-size: 30px;
+}
+
+.subtitle {
+    color: #cd8fac;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* Home */
+
+.vpn__home__img {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Table */
+table {
+    border-collapse: separate;
+    border: solid #f6f6f6 2px;
+    border-radius: 6px;
+    text-align: left;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+td, th {
+    border-left: solid #f6f6f6 1px;
+    border-top: solid #f6f6f6 1px;
+    padding: 10px 10px;
+}
+
+td:first-child, th:first-child {
+    border-left: none;
+}
+
+th {
+    border-top: none;
+    background-color: #f6f6f6;
+}
+
+
+td {
+    background-color: white;
+}
+
+
+/* Form */
+.form__container {
+    border: solid #f6f6f6 2px;
+    border-radius: 5px;
+    padding: 10px 40px;
+}
+
+
+.form__input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 16px;
+}
+
+input, textarea, select {
+    width: 40%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+
+/* Profile */
+.profile__detailed__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    padding-top: 25px;
+}
+
+.profile__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.paragraph {
+    width: 70%;
+    text-align: justify;
+    margin: 0 auto;
+}
+
+/* Site */
+.site__info {
+    background-color: #f6f6f6;
+    padding: 5px 20px 0 20px;
+    border-radius: 5px;
+    margin-bottom: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site__title {
+    color: #cd8fac;
+    font-size: 22px;
+}
+
+.site__anchor {
+    border-radius: 10px;
+    padding: 10px 25px;
+    background-color: #48a148;
+    color: white;
+    margin: 10px;
+}
+
+.site__danger__anchor {
+    background-color: darkred;
+}
+
+.site__action__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+}
+
+.pagination__list {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination__list__item {
+    border-radius: 5px;
+    margin: 0 5px;
+    padding: 5px 15px;
+    background-color: #f6f6f6;
+    color: dodgerblue;
+    font-size: 22px;
+}
+
+.pagination__list__item__active {
+    background-color: #b8b8b8;
+}

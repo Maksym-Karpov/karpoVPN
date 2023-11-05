@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Delete site from karpoVPN{% endblock title %}
+
+{% block content %}
+    <h1 class="section__title">Delete site from karpoVPN</h1>
+
+    <form method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p>Are you sure you want to delete "{{ site.name }}" site?</p>
+        <button type="submit" class="button__danger">Delete site</button>
+    </form>
+{% endblock content %}

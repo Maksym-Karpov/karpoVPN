@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load custom_pagination %}
+{% block title %}Sites created on karpoVPN{% endblock title %}
+
+{% block content %}
+    <h1 class="section__title">Sites created on karpoVPN</h1>
+
+    {% for site in sites %}
+        <div class="site__info">
+            <div>
+                <h3 class="site__title">{{ site.name }}</h3>
+                <p>{{ site.domain|slice:50 }}</p>
+            </div>
+            <div class="site__action__container">
+
+                <a href="{% url 'proxy_site' site.name site.default_path %}"
+                   target="_blank" class="site__anchor">
+                    Go to site
+                </a>
+
+                <a href="{% url 'site_delete' site.pk %}"
+                   target="_blank" class="site__anchor site__danger__anchor">
+                    Delete site
+                </a>
+            </div>
+        </div>
+
+    {% endfor %}
+
+    {% render_pagination page_obj %}
+
+{% endblock content %}

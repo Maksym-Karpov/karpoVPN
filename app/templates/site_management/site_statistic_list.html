@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load custom_pagination %}
+{% load custom_tags %}
+{% block title %}Sites statistics on karpoVPN{% endblock title %}
+
+{% block content %}
+    <h1 class="section__title">Sites statistics on karpoVPN</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Site Name</th>
+            <th>Views</th>
+            <th>Received Data</th>
+            <th>Uploaded Data</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for site in sites %}
+            <tr>
+                <td>{{ site.name }}</td>
+                <td>{{ site_view_statistics|get_item:site.id }}</td>
+                <td>{{ site_rcvd_data_statistics|get_item:site.id }} KB</td>
+                <td>{{ site_ul_data_statistics|get_item:site.id }} KB</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    {% render_pagination page_obj %}
+
+{% endblock content %}

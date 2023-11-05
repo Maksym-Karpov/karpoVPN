@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Register on karpoVPN{% endblock title %}
+
+{% block content %}
+    <h1 class="section__title">Register on karpoVPN</h1>
+
+    <form method='POST' action='{{ action_url }}' enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" name="next" value="{{ next }}"/>
+        <button type="submit">Register</button>
+    </form>
+{% endblock content %}

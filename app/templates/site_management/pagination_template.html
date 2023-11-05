@@ -1,0 +1,19 @@
+<div class="pagination">
+    <ul class="pagination__list">
+        {% if page_obj.paginator.num_pages > 1 %}
+
+            {% for page in page_obj.paginator.page_range %}
+                {% if page == page_obj.number %}
+                    <li class="pagination__list__item pagination__list__item__active">
+                        <a href='?page={{ page }}'>{{ page }}</a>
+                    </li>
+                {% else %}
+                    <li class="pagination__list__item">
+                        <a href='?page={{ page }}'>{{ page }}</a>
+                    </li>
+                {% endif %}
+
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>

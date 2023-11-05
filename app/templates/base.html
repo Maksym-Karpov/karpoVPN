@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}karpoVPN{% endblock title %}</title>
+    <link href="{% static "css/base.css" %}" rel="stylesheet">
+</head>
+<body>
+
+<header class="header">
+    <div class="container">
+        <div class="header__inner">
+
+            <a href="{% url 'home' %}">
+                <img class="header__logo"
+                     src="{% static 'images/karpoVPN.png' %}"
+                     alt="karpovhunt">
+            </a>
+
+            {% if request.user.is_authenticated %}
+                <nav class="nav">
+                    <a href="{% url 'site_create' %}" class="nav__link">Create site</a>
+                    <a href="{% url 'site_list' %}" class="nav__link">View sites</a>
+                    <a href="{% url 'site_statistic' %}" class="nav__link">Statistic</a>
+                </nav>
+                <div>
+                    <a href="{% url "profile" request.user.pk %}">
+                        <button>&#127968My profile</button>
+                    </a>
+                    <a href="{% url 'logout' %}">
+                        <button class="button__danger">Log-out</button>
+                    </a>
+                </div>
+            {% else %}
+                <div>
+
+                    <a href="{% url 'login' %}">
+                        <button class="button__success">Log-in</button>
+                    </a>
+                    <a href="{% url 'registration' %}">
+                        <button>Sign-up</button>
+                    </a>
+                </div>
+            {% endif %}
+
+        </div>
+    </div>
+</header>
+
+<section class="section">
+    <div class="container">
+        <div class="section__inner">
+            {% block content %}{% endblock content %}
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Login to karpoVPN{% endblock title %}
+
+{% block content %}
+    <h1 class="section__title">Login to karpoVPN</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+{% endblock content %}
