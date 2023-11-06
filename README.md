@@ -11,23 +11,23 @@ through the website.
 - Registration and login
   - Users can register on the website by providing their email address and creating a password.
   - After registration, users can log in to the website using their account.
-  ![img.png](docs/images/registration_and_login.png)
+  ![registration_and_login.png](docs/images/registration_and_login.png)
 - User's personal account
   - In the personal account, users can edit their personal data such as name, password, etc.
-  ![img_3.png](docs/images/personal_account.png)
+  ![personal_account.png](docs/images/personal_account.png)
 - VPN usage statistics 
   - In their personal account, users can view VPN usage statistics, such as the number of times they navigated between pages and the amount of data sent and downloaded through the VPN. 
   - The statistics are divided by the sites used through the VPN.
-  ![img_2.png](docs/images/statistics.png)
+  ![statistics.png](docs/images/statistics.png)
 - Creating your own websites
   - Users can create their own websites in their personal account. Each site has a name and URL.
   - After creating a site, the user can click on the "Go to site" button and they will be redirected to the site via internal routing.
-  ![img_4.png](docs/images/creating_your_own_websites.png)
+  ![creating_your_own_websites.png](docs/images/creating_your_own_websites.png)
 - A proxy server for browsing websites
   - Your app acts as an intermediary between the user and the original website.
   - When the user navigates to a page on the original site, he or she provides the name of his or her site and the path on the original site.
   - The application performs routing and forwards requests to the original site through its proxy server.
-  ![img_5.png](docs/images/proxy_server.png)
+  ![proxy_server.png](docs/images/proxy_server.png)
 
 # Configuration
 

@@ -6,8 +6,8 @@ from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, DeleteView
 
 from proxy.mixin import FilterSitesByUserMixin
-from proxy.views import SITE_VIEWS_COUNTER_VAR, SITE_DATA_COUNTER_RECEIVED_VAR, \
-    SITE_DATA_COUNTER_UPLOADED_VAR
+from services.proxy_service import SITE_VIEWS_COUNTER_VAR, \
+    SITE_DATA_COUNTER_UPLOADED_VAR, SITE_DATA_COUNTER_RECEIVED_VAR
 from site_management.forms import SiteForm
 from site_management.models import Site
 
@@ -26,7 +26,7 @@ class SiteCreateView(LoginRequiredMixin, CreateView):
         parsed_url = urlparse(url)
         path = parsed_url.path
         domain = parsed_url.netloc
-        if Site.objects.filter(domain=domain).exists():
+        if Site.objects.filter(domain=domain, user=self.request.user).exists():
             messages.error(
                 self.request,
                 f'Site with {domain} already exists'
